@@ -1,10 +1,14 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+
+import FilterBar from "./components/filterBar";
+import InsertionBar from "./components/insertionBar";
 
 function App() {
   return (
-    <div className="App">
-      <h1>To-Do List</h1>
+    <div className="app-header">
+      <FilterBar />
+      <InsertionBar />
     </div>
   );
 }

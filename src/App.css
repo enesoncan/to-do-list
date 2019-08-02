@@ -1,0 +1,25 @@
+.app-header {
+  top: 20px;
+  left: 50%;
+  display: flex;
+  padding: 30px 50px;
+  width: fit-content;
+  position: relative;
+  transform: translate(-50%, 0);
+  border-radius: 4px;
+  background-color: #eee;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+.filter-bar input,
+.insertion-bar input {
+  min-width: 210px;
+  outline: none;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 2px solid #666;
+  color: #333;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
