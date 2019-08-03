@@ -37,3 +37,22 @@
 .delete-item:hover {
   background-color: #eee;
 }
+
+.empty-list {
+  padding: 30px 0 10px;
+  position: relative;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.empty-list img {
+  width: 400px;
+}
+.empty-list p {
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  font-family: "Montserrat", arial, helvetica;
+  margin-top: 25px;
+}

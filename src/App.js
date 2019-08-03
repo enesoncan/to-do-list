@@ -10,7 +10,7 @@ class App extends React.Component {
     super();
 
     this.state = {
-      list: ["List Item 1", "List Item 2", "List Item 3"]
+      list: []
     };
   }
 
