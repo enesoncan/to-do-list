@@ -1,0 +1,39 @@
+.list {
+  padding-left: 10px;
+  margin-top: 10px;
+  display: block;
+  height: 40px;
+  min-width: 500px;
+  background-color: #fff;
+  transition: 250ms ease-in-out;
+  cursor: grab;
+  color: #444;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: "Montserrat", arial, helvetica;
+  line-height: 40px;
+}
+
+.list:hover {
+  box-shadow: 0 0 5px 1px rgba(91, 87, 94, 0.16);
+}
+
+.delete-item {
+  padding: 5px 10px;
+  margin-right: 10px;
+  margin-top: 8px;
+  float: right;
+  color: red;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: "Montserrat", arial;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  transition: 200ms ease-in-out;
+}
+.delete-item:hover {
+  background-color: #eee;
+}
