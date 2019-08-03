@@ -23,12 +23,12 @@ class InsertionBar extends Component {
       <div className="insertion-bar">
         <input
           type="text"
-          placeholder="Bir şeyler ekle"
+          placeholder="Add New Item"
           ref={c => (this.input = c)}
           onKeyDown={this.handleKeyDown}
         />
         <button type="button" onClick={this.handleClick}>
-          Ekle
+          Add
         </button>
       </div>
     );
