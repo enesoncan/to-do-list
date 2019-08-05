@@ -28,9 +28,11 @@ class App extends React.Component {
     const { list } = this.state;
     const addItem = value;
 
-    this.setState({
-      list: [...list, addItem]
-    });
+    if (addItem.length > 0) {
+      this.setState({
+        list: [...list, addItem]
+      });
+    }
   };
 
   render() {
