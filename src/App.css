@@ -28,3 +28,12 @@
   font-weight: 600;
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
 }
+
+/* filter-bar */
+.filter-bar {
+  margin-right: 25px;
+}
+.filter-bar input {
+  margin: 0;
+  padding: 10px;
+}

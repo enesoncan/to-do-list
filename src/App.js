@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 
-import FilterBar from "./components/filterBar";
 import InsertionBar from "./components/insertionBar";
 import Content from "./components/content";
 
@@ -39,7 +38,9 @@ class App extends React.Component {
     return (
       <div className="app">
         <div className="app-header">
-          <FilterBar />
+          <div className="filter-bar">
+            <input type="text" placeholder="Search On The List" />
+          </div>
           <InsertionBar add={this.addItem} />
         </div>
         <div className="app-content">
