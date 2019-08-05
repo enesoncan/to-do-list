@@ -8,23 +8,28 @@ class Content extends Component {
     const { onDelete } = this.props;
     onDelete(index);
   };
+
   render() {
-    const { list } = this.props;
+    const { list, filterText } = this.props;
     if (list.length > 0) {
-      return list.map((item, index) => {
-        return (
-          <div className="list" key={index}>
-            <span>{item}</span>
-            <button
-              className="delete-item"
-              type="button"
-              onClick={() => this.handleDelete(index)}
-            >
-              Delete
-            </button>
-          </div>
-        );
-      });
+      return list
+        .filter(item => {
+          return item.toLowerCase().indexOf(filterText.toLowerCase()) >= 0;
+        })
+        .map((item, index) => {
+          return (
+            <div className="list" key={index}>
+              <span>{item}</span>
+              <button
+                className="delete-item"
+                type="button"
+                onClick={() => this.handleDelete(index)}
+              >
+                Delete
+              </button>
+            </div>
+          );
+        });
     } else {
       return (
         <div className="empty-list">

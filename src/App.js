@@ -9,7 +9,8 @@ class App extends React.Component {
     super();
 
     this.state = {
-      list: []
+      list: [],
+      filterText: ""
     };
   }
 
@@ -34,17 +35,32 @@ class App extends React.Component {
     }
   };
 
+  handleFilter = e => {
+    let val = e.target.value;
+
+    this.setState({
+      filterText: val
+    });
+  };
   render() {
     return (
       <div className="app">
         <div className="app-header">
           <div className="filter-bar">
-            <input type="text" placeholder="Search On The List" />
+            <input
+              type="text"
+              placeholder="Search On The List"
+              onChange={e => this.handleFilter(e)}
+            />
           </div>
           <InsertionBar add={this.addItem} />
         </div>
         <div className="app-content">
-          <Content list={this.state.list} onDelete={this.handleDelete} />
+          <Content
+            list={this.state.list}
+            onDelete={this.handleDelete}
+            filterText={this.state.filterText}
+          />
         </div>
       </div>
     );
