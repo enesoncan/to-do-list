@@ -1,0 +1,66 @@
+.listWrapper {
+  max-width: 600px;
+  margin: 40px auto 0px;
+}
+
+.list-item {
+  margin: 5px auto;
+  display: block;
+  padding-left: 10px;
+  height: 50px;
+  min-width: 500px;
+  background-color: #fff;
+  transition: 250ms ease-in-out;
+  cursor: grab;
+  color: #444;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: "Montserrat", arial, helvetica;
+  line-height: 50px;
+  text-transform: capitalize;
+}
+
+.list-item:hover {
+  box-shadow: 0 0 5px 1px rgba(91, 87, 94, 0.16);
+}
+
+.delete-item {
+  padding: 6px 10px;
+  margin-right: 10px;
+  margin-top: 12px;
+  float: right;
+  color: red;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: "Montserrat", arial;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  transition: 200ms ease-in-out;
+}
+.delete-item:hover {
+  background-color: #eee;
+}
+
+.empty-list {
+  width: 400px;
+  margin: 40px auto;
+  padding: 30px 0 10px;
+  position: relative;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.empty-list img {
+  width: 400px;
+}
+.empty-list p {
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  font-family: "Montserrat", arial, helvetica;
+  margin-top: 20px;
+}

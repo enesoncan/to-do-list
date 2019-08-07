@@ -1,0 +1,8 @@
+/* filter-bar */
+.filter-bar {
+  margin-right: 25px;
+}
+.filter-bar input {
+  margin: 0;
+  padding: 10px;
+}

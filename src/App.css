@@ -1,18 +1,15 @@
 .app-header,
 .app-content {
-  top: 40px;
-  left: 50%;
   display: flex;
   padding: 30px 50px;
   width: fit-content;
   position: relative;
-  transform: translate(-50%, 0);
   border-radius: 4px;
   background-color: #fff;
+  margin: 20px auto;
 }
 .app-content {
   display: block;
-  margin-top: 30px;
   background-color: transparent;
 }
 
@@ -27,13 +24,4 @@
   font-size: 12px;
   font-weight: 600;
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
-}
-
-/* filter-bar */
-.filter-bar {
-  margin-right: 25px;
-}
-.filter-bar input {
-  margin: 0;
-  padding: 10px;
 }

@@ -2,6 +2,8 @@ import React from "react";
 import "./App.css";
 
 import InsertionBar from "./components/insertionBar";
+import DraggableList from "./components/draggable-list";
+import FilterInput from "./components/filter-input";
 import Content from "./components/content";
 
 class App extends React.Component {
@@ -9,7 +11,7 @@ class App extends React.Component {
     super();
 
     this.state = {
-      list: [],
+      list: ["test", "example", "tutorial"],
       filterText: ""
     };
   }
@@ -42,26 +44,42 @@ class App extends React.Component {
       filterText: val
     });
   };
+
+  listOrderChange = newList => {
+    console.log("newList", newList);
+    this.setState({
+      list: newList
+    });
+  };
+
+  handleDrop = event => {
+    console.log("dropped");
+    let id = event.dataTransfer.getData("id");
+
+    let arr = this.state.list;
+    arr.prototype.move = function(from, to) {
+      this.splice(to, 0, this.splice(from, id)[0]);
+    };
+  };
   render() {
     return (
       <div className="app">
-        <div className="app-header">
-          <div className="filter-bar">
-            <input
-              type="text"
-              placeholder="Search On The List"
-              onChange={e => this.handleFilter(e)}
-            />
-          </div>
-          <InsertionBar add={this.addItem} />
-        </div>
-        <div className="app-content">
-          <Content
-            list={this.state.list}
-            onDelete={this.handleDelete}
-            filterText={this.state.filterText}
-          />
-        </div>
+        <Content>
+          {() => (
+            <div>
+              <div className="app-header">
+                <FilterInput onChange={this.handleFilter} />
+                <InsertionBar add={this.addItem} />
+              </div>
+              <DraggableList
+                list={this.state.list}
+                onDelete={this.handleDelete}
+                filterText={this.state.filterText}
+                onChange={this.listOrderChange}
+              />
+            </div>
+          )}
+        </Content>
       </div>
     );
   }
