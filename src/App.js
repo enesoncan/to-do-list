@@ -9,7 +9,7 @@ class App extends React.Component {
     super();
 
     this.state = {
-      list: [],
+      list: ["test", "example", "tutorial"],
       filterText: ""
     };
   }
@@ -42,6 +42,20 @@ class App extends React.Component {
       filterText: val
     });
   };
+
+  handleDragOver = event => {
+    event.preventDefault();
+  };
+
+  handleDrop = event => {
+    console.log("dropped");
+    let id = event.dataTransfer.getData("id");
+
+    let arr = this.state.list;
+    arr.prototype.move = function(from, to) {
+      this.splice(to, 0, this.splice(from, id)[0]);
+    };
+  };
   render() {
     return (
       <div className="app">
@@ -49,17 +63,23 @@ class App extends React.Component {
           <div className="filter-bar">
             <input
               type="text"
-              placeholder="Search On The List"
+              placeholder="Search In The List"
               onChange={e => this.handleFilter(e)}
             />
           </div>
           <InsertionBar add={this.addItem} />
         </div>
-        <div className="app-content">
+        <div
+          className="app-content"
+          onDragOver={e => this.handleDragOver(e)}
+          onDrop={e => this.handleDrop(e)}
+        >
           <Content
             list={this.state.list}
             onDelete={this.handleDelete}
             filterText={this.state.filterText}
+            onDragOver={this.handleDragOver}
+            onDrop={this.handleDrop}
           />
         </div>
       </div>
